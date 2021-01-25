@@ -1,7 +1,7 @@
 <project>
 	<groupId>intense.com.hello-world</groupId>
 	<artifactId>Intense</artifactId>
-	<Version>1.0-SANAPSHOT</Version>
+	<Version>1.0-SNAPSHOT</Version>
 	<package>war</package>
 
 
