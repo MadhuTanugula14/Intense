@@ -1,6 +1,6 @@
 <project>
-	<groupid>intense.com.hello-world</groupid>
-	<artifactid>hello-world</artifactid>
+	<groupId>intense.com.hello-world</groupId>
+	<artifactId>hello-world</artifactId>
 	<version>1.0-SANAPSHOT</version>
 	<package>war</package>
 
