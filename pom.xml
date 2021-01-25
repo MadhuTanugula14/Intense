@@ -3,7 +3,7 @@
 	<groupId>intense.com.hello-world</groupId>
 	<artifactId>Intense</artifactId>
 	<version>1.0-SNAPSHOT</version>
-	<package>war</package>
+	
 
 
 
