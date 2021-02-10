@@ -1,0 +1,97 @@
+pipeline {
+    agent any 
+    environment {
+        PATH = "/usr/bin/mvn:$PATH"
+        EMAIL_INFORM = 'tanugulamadhu278@gmail.com;madhutanuguladevops14@gmail.com'
+       }
+    
+
+stages {
+       
+
+ stage("Git clone") {
+            steps {
+              git credentialsId: 'pavanj-git-id', url: 'https://github.com/pavan5107/jenkinspipeline_tomcat_jm_docker.git'
+}
+        }
+        
+
+
+stage ("maven build") {
+            steps {
+                sh "mvn clean package"
+               
+            }
+            
+        }
+        
+
+stage("deploy war file"){
+            steps{
+                sshagent(['root-tomcat-deployment-server']) {
+                sh """
+                scp -o StrictHostKeyChecking=no webapp/target/*.war root@54.188.88.245:/opt/tomcat/webapps
+                """
+                }
+                
+            }
+         }
+        }
+
+
+        post {
+        always {
+                emailext body: 'Check console output at $BUILD_URL to view the results. Build Status $BUILD_STATUS => You got this email because of you are one of the Project Team Member',
+                        to: "${EMAIL_INFORM}", 
+                        subject: 'Jenkins - Released $PROJECT_NAME - #$BUILD_NUMBER'
+               }
+            }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pipeline {
+    agent any 
+    environment {
+        PATH = "/usr/bin/mvn:$PATH"
+        EMAIL_INFORM = 'tanugulamadhu278@gmail.com;madhutanuguladevops14@gmail.com'
+       }
+    stages {
+        stage("Git clone") {
+            steps {
+              git credentialsId: 'pavanj-git-id', url: 'https://github.com/pavan5107/jenkinspipeline_tomcat_jm_docker.git'            }
+        }
+        stage ("maven build") {
+            steps {
+                sh "mvn clean package"
+               // sh "mv webapp/target/*.war //root/"
+            }
+            
+        }
+        }
+        post {
+        always {
+                emailext body: 'Check console output at $BUILD_URL to view the results. Build Status $BUILD_STATUS => You got this email because of you are one of the Project Team Member',
+                        to: "${EMAIL_INFORM}", 
+                        subject: 'Jenkins - Released $PROJECT_NAME - #$BUILD_NUMBER'
+               }
+            }
+    }
+
+
+

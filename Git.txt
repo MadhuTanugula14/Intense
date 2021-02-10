@@ -1,0 +1,127 @@
+==> it is called vesrion control system. it have auto mirging, going back and time based out of what we are checked in and customer religense.
+==> the place we develop the code it is called repository.  it has two architecture  
+   i) client server architecture. (SVN)
+==> any node can become a client and server.
+==>git is distribute system. we can repository access anywere.
+==> any machine clone the code that machine become a server.  bcz that machine get complete repository. 
+==> Git con't idetify the emty  folder. if folder have files it is identify.
+
+Git has three areas:
+1)Staging area(git add) (git status) green
+2)local repository(working tree) (git commit -m)
+   git config global --user.name=
+   git config global --user.email=
+
+FOR EDIT:
+========
+git config --edit --global
+
+
+3)server (git push)
+
+
+
+To rename the file name:
+======================
+git mv oldnamefilename  newfilename
+
+
+BRANCHING:
+==========
+
+==>git checkout -b branchname   ( create bramch and moving into that branch)
+==>git branch branchname (create branch)
+==>git checkout branchname (moving into that branch)
+	
+
+push the code to repositry use new branch:
+=========================================
+==> git push origin branch-name(it is remote name (this remote name is place it .git/config file))   ( default name is origin)
+
+==> submit the or move or push the code one branch to another brach is called as merging.
+
+
+ex: branch1 name is : int
+ex : branch2 name is : dev
+
+you want to mergre int to dev. fro that you must in dev branch. 
+then  
+==> git merge int
+==>git push origin int
+note: after you merge not nessesary to commit. directly push the changes.
+
+
+==>if two files have same data. that files have same commit id. 
+
+(git cat file google it)
+
+
+
+NOTE: one file create in master branch but you not save or commit that file. checkout in to anothe branch. that file availble in both two branches.
+=====*********************************************************************************************************************************************
+
+==>TAGES:
+   =======
+==>tag is nothing but label apply to commit.
+==> git log --oneline
+==>git log --oneline --graph
+
+GIT Clients:
+===========
+1)tortoise git
+2)source tree
+
+Server Repositorys:
+===================
+1)github
+2)gitlab
+3)BitBucket
+
+==>git reset --hard
+==>git stash (it is save locally)
+==>git stash apply
+==>git stash pop
+==>git stash list
+
+
+
+CHERRY-PIC:
+==========
+it is used to merge  commit to another branch. i.e; only one change.
+change in int1 branch this change merge in to int2 branch. go to int2 branch and do (git cherry-pic commit-id)
+for ex commit id is : 13ms45
+==>git cherry-pic 13ms45
+
+
+REBASE:
+=======
+
+
+HOOKS:
+======
+two typs of hooks.
+1)local hooks
+2)server hooks
+
+
+
+==>reset
+========
+git reset HEAD filename.  ( back from stage area ) go back to working area.
+git reset HEAD~1  (if commit somting. you want to go back to working area use this.  only one commit id. up to 4 commit id's only)
+   =>it removed latest commit in the history.
+    it only use you if u r not push to your repository. that time only it is used. 
+    you don't reset a specipic commit. 
+
+git reset --soft HEAD~1 ( the changes kept in staging area form localrepository.)
+git reset --hard HEAD~1  (
+git revert  commitid  ( changes for repository kept to local repository.  do not remove the commit changes back and new commit it created.) 
+
+
+==> .gitignore  file is used to which file you want to skip from working directory you mention that file extentions in this file. then git is not track the that extentio files.
+
+==>git branch --merged (to check which branches merged)
+==>git branch --no-merged  (to check which branches are not merged)
+
+
+

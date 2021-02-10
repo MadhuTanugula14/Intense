@@ -1,0 +1,5 @@
+https://github.com/awstechguide/scripts
+
+https://github.com/QT-DEVOPS/DEVOS
+
+https://github.com/asquarezone/AnsibleZone/blob/master/Dec20/IntroToPlaybooks/tomcat8-gol/gol-playbook.yaml

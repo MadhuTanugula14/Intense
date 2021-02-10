@@ -1,0 +1,72 @@
+==>  What is Jenkins ?
+  A: CI CD and Automation tool.
+     Open source
+     it is written in java. jenkins is opensource automation tool.
+     which can be used to automate all sorts of tasks related to bulding,testing and delivering or deploying software.
+     Jenkins written in java and therefore needs JRE to run.
+
+==> What is CI & CD ?
+ A:  ==> CI - Continuous integratioin.
+              A process to integrate and merge code in a common repository.
+              CI process and also include integration testing to check the shared code is working.
+     ==> CD - Continuous delivery
+              Adding the process of running functonal acceptance test in the CI chain.
+    ==> CD - Continuous Deployment
+             Adding the process of deploying to production or user environment in the CD Continuous delivery chain.
+
+==> What is Hudson ?
+  A: Hudson was the earlier name and version of current jenkins. After some issuess the Hudson project wars renamed jenkis.
+ 
+
+==> What are the steps to setup the jenkins ?
+  A: Install java (JRE & JDK)
+     Download jenkins.war file.
+     Run jenkins.war file   use   java -jar jenkins.war
+     On browser goto http://localhost:8080
+     complete the setup on the jenkins UI.
+    
+     The above is setup through jenkins.war file.  User can also setup using a excutable file.
+  
+==> What is Jenkins pipeline ?
+  A:  A process to integrate and chain the process in a project.
+      At a high level the following proesses or stages are chained and integrated in a Pipeline.
+      i)Build
+     ii)Deployment
+    iii)Testing
+     iv)Release.
+
+==> How to implement the jenkins pipeline ?
+  A: Using Jenkinsfile.
+
+
+==>  What is Jenkinsfile ?
+  A:  A text file where the code (in groovy) is written to define the stages and steps of the pipeline..
+      Can be created within a jenkins job or checked in Repository.
+ 
+==> How to create the jenkins pipeline ?
+  A: Install pileline Plugin.
+     Create new job with type pipeline.
+     In the pipeline section add the code in jenkinsfile or get a jenkinsfile from SCM. (like Git).
+     IN jenkinsfile mentioned stages and steps.
+     Run the job and check the result.
+
+
+===> What is Declarative versus Scripted Pipeline ?
+  A: A jenkinsfile can be written using two types of syntax Declarative and Scripted. Both are written with Groovy but have a diff structure.
+     Declarative Pipeline is a more recent feature of jenkins Pipeline Which is:
+        --->Provides richer syntactical features over Scripted Pipeline syntax.
+        --->is designed to make writing and reading Pipeline code easier.
+
+===> How can I backup my jenkins ?
+  A: can use plugins like ...
+    i)Backup(old)
+   ii)periodic Backup (New)
+
+---------------------------------------------------------------------------------------------------------------
+
+Jenkins Author - Kohsuke Kavaguchi
+Initial Release - Feb 2011
+Written in - java
+ 
+  
+   

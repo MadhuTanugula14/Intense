@@ -1,0 +1,129 @@
+jenkins.devopskdemo.tk  a 300 44.241.19.132
+
+
+
+
+ server {
+    server_name jenkins.devopskdemo.tk;
+
+    location / {
+        proxy_set_header        Host $host:$server_port;
+        proxy_set_header        X-Real-IP $remote_addr;
+        proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header        X-Forwarded-Proto $scheme;
+
+        proxy_pass          http://127.0.0.1:8080;
+        proxy_read_timeout  90;
+
+        proxy_redirect      http://127.0.0.1:8080 https://jenkins.devopskdemo.tk;
+
+        proxy_http_version 1.1;
+        proxy_request_buffering off;
+    } 
+
+}
+
+
+
+pipeline {
+    agent any 
+       environment {
+            EMAIL_INFORM = 'pavanj@kensium.com'
+        }
+    
+    stages {
+        stage ("Maintenance Enabled:") {
+            steps {
+                sshagent(['staging-magento2-backend']) {
+                    sh """
+                        ssh -o StrictHostKeyChecking=no ubuntu@ec2-3-128-233-83.us-east-2.compute.amazonaws.com "cd /var/www/html/magento2-backend && sudo php bin/magento maintenance:enable && sudo git pull ssh staging"
+                  """
+                  }
+            }
+            }
+    }
+        post {
+        always {
+                emailext body: 'Check console output at $BUILD_URL to view the results. Build Status $BUILD_STATUS => You got this email because of you are one of the Project Team Member',
+                        to: "${EMAIL_INFORM}", 
+                        subject: 'Jenkins - Released $PROJECT_NAME - #$BUILD_NUMBER'
+            } 
+        }
+    }
+
+
+
+https://accounts.google.com/signin/v2/challenge/pwd?continue=https%3A%2F%2Fmyaccount.google.com%2Flesssecureapps&service=accountsettings&osid=1&rart=ANgoxcfEMhcYpbdgtpav12iVwMbmcyjS2Pwy6btScgQgK6Ao0glSQXHib2QW2fIAwH2vx8tkUx3l1PcYTI2AQRsqfyBCSpaUzA&TL=AM3QAYYwxofuqyczhaedfv62SsQWeXFqKS9pwK0PDTD5lkUSqZEMh3B3iR8cZid2&flowName=GlifWebSignIn&cid=1&flowEntry=ServiceLogin
+
+
+http://www.google.com/accounts/DisplayUnlockCaptcha 
+
+
+
+pipeline {
+    agent any 
+    environment {
+        PATH = "/usr/bin/mvn:$PATH"
+        EMAIL_INFORM = 'tanugulamadhu278@gmail.com'
+       }
+    stages {
+        stage("Git clone") {
+            steps {
+              git credentialsId: 'pavanj-git-id', url: 'https://github.com/pavan5107/jenkinspipeline_tomcat_jm_docker.git'            }
+        }
+        stage ("maven build") {
+            steps {
+                sh "mvn clean package"
+               // sh "mv webapp/target/*.war //root/"
+            }
+            
+        }
+        post {
+        always {
+                emailext body: 'Check console output at $BUILD_URL to view the results. Build Status $BUILD_STATUS => You got this email because of you are one of the Project Team Member',
+                        to: "${EMAIL_INFORM}", 
+                        subject: 'Jenkins - Released $PROJECT_NAME - #$BUILD_NUMBER'
+     }
+            
+    }
+
+
+
+
+
+
+
+
+pipeline {
+    agent any 
+    environment {
+        PATH = "/usr/bin/mvn:$PATH"
+        EMAIL_INFORM = 'tanugulamadhu278@gmail.com;madhutanuguladevops14@gmail.com'
+       }
+    stages {
+        stage("Git clone") {
+            steps {
+              git credentialsId: 'pavanj-git-id', url: 'https://github.com/pavan5107/jenkinspipeline_tomcat_jm_docker.git'            }
+        }
+        stage ("maven build") {
+            steps {
+                sh "mvn clean package"
+               // sh "mv webapp/target/*.war //root/"
+            }
+            
+        }
+        }
+        post {
+        always {
+                emailext body: 'Check console output at $BUILD_URL to view the results. Build Status $BUILD_STATUS => You got this email because of you are one of the Project Team Member',
+                        to: "${EMAIL_INFORM}", 
+                        subject: 'Jenkins - Released $PROJECT_NAME - #$BUILD_NUMBER'
+               }
+            }
+    }
+
+
+
+
+
+

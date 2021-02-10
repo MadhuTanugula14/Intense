@@ -1,0 +1,17 @@
+
+https://medium.com/@vishal.sharma./deploy-a-sample-war-java-application-on-docker-25729d4840d5s
+
+https://www.cprime.com/resources/blog/deploying-your-first-web-app-to-tomcat-on-docker/
+
+
+
+
+FROM tomcat:8.0-alpine
+
+LABEL maintainer=”deepak@softwareyoga.com”
+
+ADD sample.war /usr/local/tomcat/webapps/
+
+EXPOSE 8080
+
+CMD [“catalina.sh”, “run”]

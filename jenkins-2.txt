@@ -1,0 +1,6 @@
+For the Unit test code qulity check is called coverage reports (form unit test how much of code devlopment has covered). they are
+ -->symbels covareage (symbels are variables in our code)
+-->line coverage
+--->branch coverage.
+
+sonarqube configuring with maven (google it)

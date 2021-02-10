@@ -1,0 +1,164 @@
+Integration is two type: 
+1)during the devopers are working.(day builds)
+2)devoloper finish they work. (night builds) (after code done given to testingteam)
+
+NOTE: ==>you work with any CI tool first check the permissions mandatary.
+ 
+
+java project:
+===========
+deploy ==> test environment
+ 1)how to build the code
+2)how to excute the unit tests
+3)how to get the code quality & test quality reports.
+4)how to deploy the package on the server
+
+Tool Set:
+========
+1)Maven
+2)sonar qube
+3)jfrog
+
+
+Maven:
+======
+==>SNAPSHOT is mean the build is dev build. (in pom.xml)
+
+
+when you install plugin in that have extention is :  .hpi  (hadson plugin interface)  .jpi (jenkins plugin interface)
+
+
+Introduction:
+=============
+jenkins is a tool. ci and cd tool. it is open source tool. it is written in java
+ 
+Continues Integration:
+=====================
+Dev--->Applicatioin Test -->Integration test.
+
+Continues Delivery:
+==================
+Dev--->Applicatioin Test -->Integration test --->Acceptence Test  (i.e; almost ready to delivery)
+
+
+
+Installation:
+=============
+ON WINDOWS:
+==========
+Step-1: check the java installed or not. if not install ( support 8 and above version)
+Step-2: Download jenkins.war file.  or .msi  file.
+Step-3: Go to cmd prompt and run command --> java -jar jenkins.war
+        ==> default port is : 8080
+        ==> for change  -->  java -jar jenkins.war --httpPort=8090
+Step-4: On broser gotp http://localhost:8080 (default port)
+Step-5: Provide the admin password and complete the setup
+
+
+ON MAC:
+=======
+Homebrew this is the pack manager of mac.
+1)Goto Homebrew website --> copy the command (below of homebrew titile) --> past cmd promt and hit enter --> installed the homebrew successfull.
+2)to check brew --version.
+3)To check the package name ( brew search) jenkins-lts  is the jenkins package.
+4)brew install jenkins-lts
+5)brew services start jenkins-lts
+6)brew info jenkins-lts  ( change port number --> .plist  file)
+7)After change the port  ( brew sevices restart jenkins-lts)
+
+
+Jenkins configuration:
+======================
+Manage jenkins ---> Configure System ( golbal setting of jenkis) -->
+
+
+
+  HOW TO CHANGE THE Home Directory of jenkins:
+  ============================================
+
+  Step 1: Check u r jenkins home dir -->Manage Jenkins --->Configure System
+  Step 2: Create new Folder in local machine
+  Step 3: Copy the data from old to new folder
+  Step 4: Create/update enviranment veriable  JENKINS_HOME
+  Step 5: Restart jenkins. 
+  if  .msi file i.e; jenkis as windows service  ( edit the jenkins.xml file )
+
+
+==>How to setup Git on Jenkins
+
+Step 1 : Goto Manage Jenkins ＞ Manage Plugins
+Step 2 : Check if git is already installed in Installed tab
+Step 3 : Else goto Available tab and search for git
+Step 4 : Install Git
+Step 5 : Check git option is present in Job Configuration
+
+==>Create the first Job on Jenkins
+==>How to connect to Git Remote Repository in Jenkins (GitHub)
+
+Step 1 : Get the url of the remote repository
+Step 2 : Add the git credentials on Jenkins
+Step 3 : In the jobs configuration goto SCM and provide git repo url in git section
+Step 4 : Add the credentials
+Step 5 : Run job and check if the repository is cloned
+
+==>How to use Command Line in Jenkins CLI
+
+Faster, easier, integrate
+Step 1 : start Jenkins
+Step 2 : goto Manage Jenkins - Configure Global Security - enable security
+Step 3 : goto - http://localhost:8080/cli/​
+Step 4 : download jerkins-cli jar. Place at any location.
+Step 5 : test the jenkins command line is working
+
+java -jar jenkins-cli.jar -s http://localhost:8080​ /help --username ＜userName＞ --password ＜password＞
+
+How to create Users + Manage + Assign Roles
+How to create New Users
+How to configure users
+How to create new roles
+How to assign users to roles
+How to Control user access on projects
+
+Step 1 : Create new users
+Step 2 : Configure users
+Step 3 : Create and manage user roles Role Based Authorization Strategy Plugin - download - restart jenkins
+Step 4 : Manage Jenkins - Configure Global Security - Authorization - Role Based Strategy
+Step 5 : Create Roles and Assign roles to users
+Step 6 : Validate authorization and authentication are working properly
+
+Chain Jobs
+
+Jenkins Pipeline Beginner Tutorial 
+How to create Jenkinsfile
+- What is pipeline
+- What is jenkins pipeline
+- What is jenkinsfile
+- How to create jenkinsfile
+
+Build ＞ Deploy ＞ Test ＞ Release
+Jenkinsfile : Pipeline as a code
+
+Step 1 : Start Jenkins
+Step 2 : Install Pipeline Plugin
+Step 3 : Create a new job
+Step 4 : Create or get Jenkinsfile in Pipeline section
+Step 5 : Run and check the output
+
+Jenkins Pipeline 
+How to get jenkinsfile from Git SCM
+
+Step 1 : Create a new job or use existing job (type : Pipeline)
+Step 2 : Create a repository or GitHub
+Step 3 : Add Jenkinsfile in the repo
+Step 4 : Under Jenkins job ＞ Pipeline section ＞ Select Definition Pipeline script from SCM
+Step 5 : Add repo and jenkinsfile location in the job under Pipeline section
+Step 6 : Save & Run
+
+Jenkins Pipeline
+How to clone a git repo using Jenkinsfile
+
+  
+
+
+
+ 

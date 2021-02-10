@@ -1,0 +1,24 @@
+---
+- name: deploy tomcat8 based application game of life
+  become: yes
+  hosts: tomcat
+  tasks:
+    - name: Installing OpenJDK
+      apt:
+        name: openjdk-8-jdk
+    - name: Downloading tomcat
+      get_url:
+        url: "https://downloads.apache.org/tomcat/tomcat-9/v9.0.43/bin/apache-tomcat-9.0.43.tar.gz"
+        dest: /home/ansible/madhu/appserver
+    - name: Extracting tomcat
+      unarchive:
+        src: "/home/ansible/madhu/appserver/apache-tomcat-9.0.43.tar.gz"
+        dest: /home/ansible/madhu/appserver
+        remote_src: yes
+    - name: Renaming tomcat home
+      command: mv /home/ansible/madhu/appserver/apache-tomcat-9.0.43 /usr/local/tomcat
+    - name: copy war into tomcat
+      copy:
+        src: /home/ansible/sample.war
+        dest: /usr/local/tomcat/webapps
+

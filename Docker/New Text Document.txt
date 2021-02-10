@@ -1,0 +1,77 @@
+default state of the container run in the foreground.
+ docker run -d container
+
+
+1.How do you  Installing Docker Server on Linux Nodes ?
+
+ sudo yum update -y
+ sudo yum install docker -y
+ sudo service docker start
+  
+add the user to docker group. for run docker cmd's without sudo.
+  
+  sudo usermod -a -G docker ec2-user  ( restart or relogin the machine)
+  docker --version
+
+
+
+2.How do you Pulling a sample Docker Image & run it.
+
+==>docker pull imagename
+==>docker run imagename (forground)
+==>docker run -d imagename (dmon or detached mode)
+ 
+
+3.How to remove all the docker images.
+
+==>docker rmi $(docker images -a -q)
+ 
+
+4.How to remove all the stopped containers.
+
+==>docker rm $(docker ps -a -q)
+
+
+5.How to restart a docker container.
+==>docker start container id or name.
+
+
+6.How to login inside of the docker container.
+
+==>docker exec -it containerid or name  /bin/bash
+
+
+7.Build the tomcat image with sample java application and run it.
+
+Download sample.war file.
+copy form local system to ec2 instance.
+==> scp -i .pem sample.war ec2-user@kjkkjkj;lkj:/home/somthingpath
+==>crate dockerfile
+
+FROM tomcat:8.5.47-jdk8-openjdk
+
+  COPY ./sample.war/  /usr/local/tomcat/webapps
+
+
+
+8.Tag the above docker image with versioning.
+==>docker commit containerid  dockerhubpasword/nameofyouurwish:tag
+
+
+9.Pushing the above docker image to your private repository.
+
+==>docker login
+==>docker login -u janedoe -p <password>
+==> docker commit a74af6dafd70 vishnu345/tomcat:8   (id is container id , vishnu345 is dockerhub username,  and tomcat is dockerhub reponame)
+==>docker push vishnu345/tomcat:8
+         (or)
+ docker commit a74af6dafd70 vishnu345/java1-tomcat:9
+  docker push vishnu345/java1-tomcat
+
+10.How to access the docker container logs.
+
+==> docker logs containerid
+
+11.How do you run the docker image with interactive&daemon mode.
+==>docker run -it imageid
+==>docker run -d imageid

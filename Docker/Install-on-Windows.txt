@@ -1,0 +1,49 @@
+Today we will learn :
+How to install Docker on Windows
+Step by Step
+
+We will see:
+Prerequisites
+Install Docker
+Troubleshooting tips
+Validate installation
+Uninstall Docker
+____________________________________________________________
+USEFUL INFORMATION
+If you install the Docker Toolbox on a Windows machine, the installer automatically installs Oracle Virtualbox to run the Docker virtual machine.
+____________________________________________________________
+Prerequisites
+OS - 64 bit
+Windows 7 or higher
+____________________________________________________________
+
+STEP 1 : Install Docker
+https://docs.docker.com/toolbox/toolb...​
+https://docs.docker.com/docker-for-wi...​
+____________________________________________________________
+
+STEP 2 : Troubleshooting (if any issue occurs)
+Convenient way to enable/disable Hyper-V
+https://superuser.com/questions/54005...​
+
+Installing Docker Toolbox on Windows with Hyper-V Installed
+https://jayvilalta.com/blog/2016/04/2...​
+____________________________________________________________
+
+STEP 3 : validate INSTALLATION
+run some docker commands
+
+docker
+docker --version
+docker run "image name"
+____________________________________________________________
+
+STEP 4 : uninstall DOCKER
+
+____________________________________________________________
+
+USEFUL LINKS
+
+https://stackoverflow.com/questions/3...​
+
+https://docs.docker.com/toolbox/faqs/...

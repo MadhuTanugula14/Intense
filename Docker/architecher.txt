@@ -1,0 +1,12 @@
+Today we will learn: How Docker works ?
+Understand a general workflow of docker
+Difference between virtualization and containerization
+Understand docker client server architecture
+Understand:
+Docker file
+Docker images
+Docker Containers
+Docker Hub / Registry
+Docker client
+Docker server / daemon
+Docker engine

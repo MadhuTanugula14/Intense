@@ -1,0 +1,30 @@
+
+How To Secure Nginx with Let's Encrypt on Ubuntu 16.04
+
+https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04
+
+1) first setup one ec2 instance and point that ip to new registered domain which is available in freenom
+2) install nginx and sample html page in nginx root directory.(www-data) sudo chown -R www-data:www-data /var/www/html
+3) after propogating the domain install ssl certificate for registered domain before that check
+   DNS(domain) propogating or not.
+4) if the domain propograting you can install certbot for vertual conf file.
+
+same process above using apache2 and wordpress
+
+
+
+
+
+
+
+how to host sample html page using nginx and apache.
+how to install certbot certification nginx and apache.
+
+
+
+
+
+
+
+
+ 
