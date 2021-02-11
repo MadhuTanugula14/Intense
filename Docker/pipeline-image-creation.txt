@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('imagecreate') {
+            steps {
+               sh 'docker build -t mytomcat /var/lib/jenkins/Dockerfiles'
+            }
+        }
+        
+       stage('Run the image') {
+            steps {
+               sh 'docker run -d -p 8087:8080 mytomcat'
+            }
+        } 
