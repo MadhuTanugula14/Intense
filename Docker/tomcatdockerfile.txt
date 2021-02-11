@@ -1,0 +1,20 @@
+FROM tomcat:7.0.108-jdk8-corretto
+
+MAINTAINER  TANUGULAMADHU
+
+COPY /home/ec2-user/madhu/warfiles/*.war  /usr/local/tomcat/webapps/
+
+EXPOSE 8080
+
+CMD [“catalina.sh”, “run”]
+
+
+
+/home/ec2-user/ sample.war
+
+vishnu345
+/tomcatdeploy:8.5.47
+
+
+
+ docker commit 3d5b9aa9bab3  java1-tomcat/test-tomcat:1.0
