@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('imagecreate') {
+            steps {
+               sh 'docker build -t javaproject /var/lib/jenkins/Dockerfiles'
+            }
+        }
+        
+       stage('Run the image') {
+            steps {
+               sh 'docker run -d -p 8081:8080 -v /var/lib/jenkins/Dockerfiles:/usr/local/tomcat/webapps/ javaproject'
+            }
+        } 
+        
+        
