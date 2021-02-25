@@ -1,0 +1,92 @@
+def skipRemainingStages = false
+
+pipeline {
+    agent any
+
+    stages {
+       
+        stage("Stage 1") {
+            steps {
+                script {
+                    skipRemainingStages = true
+
+                    println "skipRemainingStages = ${skipRemainingStages}"
+                }
+            }
+        }
+            
+       
+       
+        stage('SCM') {
+		
+            steps {
+                git credentialsId: 'scm', url: 'https://github.com/MadhuTanugula14/mvnwebapp.git'         
+				
+				}
+        }
+		
+		
+		stage('Build') {
+            
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+		
+		stage('copywarfile') {
+            
+            steps {
+                sh 'cp /var/lib/jenkins/workspace/auto-restart-docker/target/*.war /var/lib/jenkins/dockerfiles'
+            }
+        }
+		
+	
+
+
+       stage("imagecreate") {
+            when {
+                expression {
+                    !skipRemainingStages
+                }
+            }
+
+            steps {
+                
+               sh 'sudo docker build -t intense /var/lib/jenkins/dockerfiles'
+            
+            }
+        }
+        
+stage("Run-image") {
+            when {
+                expression {
+                    !skipRemainingStages
+                }
+            }
+
+            
+                steps {
+               sh 'sudo docker run -d -p 8082:8080 -v /var/lib/jenkins/dockerfiles:/usr/local/tomcat/webapps/ intense'
+            
+            }
+        }
+
+
+      stage('stopcontainer') {
+            
+            steps {
+                sh 'docker stop 8268c6d72ad8'
+            }
+        }
+
+      stage('startcontainer') {
+            
+            steps {
+                sh 'docker start 8268c6d72ad8'
+            }
+        }
+
+	
+    }
+	
+}
