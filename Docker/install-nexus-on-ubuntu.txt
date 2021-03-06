@@ -17,7 +17,7 @@ Nexus Installation in ubuntu 16.04
  ==> ./nexus status ( by this you check the status of nexus artifactory )
   To access this use http://ip_Address:8081 ( by deafault which will be running on 8081)
     
- to change default ip  /etc/nexus/deful-nexusproprt
+ to change default ip  /opt/nexus/etc/nexus-default.properties 
   intial password will be present in /opt/sonatype-work/nexus3/admin.password
 
 ===============================================
