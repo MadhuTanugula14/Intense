@@ -43,8 +43,7 @@ $ sudo  tar -zxvf latest-unix.tar.gz
 
 $ sudo  mv /opt/nexus-3.30.0-01 /opt/nexus
 
-
- sudo adduser nexus  
+sudo adduser nexus  
 
 sudo visudo 
 
@@ -71,8 +70,14 @@ Add nexus as a service at boot time
 $ sudo ln -s /opt/nexus/bin/nexus /etc/init.d/nexus
 Log in as a nexus user and start service
 
- $ su - nexus  
- $ /etc/init.d/nexus start  
+cd /etc/init.d
+sudo update-rc.d nexus defaults
+sudo service nexus start
+
+cd /opt/nexus/bin 
+./nexus start
+
+
 Check the port is running or not using netstat command
 
 $ sudo netstat -plnt
