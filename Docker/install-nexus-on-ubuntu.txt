@@ -85,3 +85,4 @@ $ sudo netstat -plnt
 docker tag image:1.0 ip-of-nexus-server:port/image:1.0
 docker login -u admin -p admin@123 ip-of-nexus-server:port (port number is repo port number)
 docker push imagename:1.0
+docker pull 34.94.229.173:8083/tomcat:1.0
