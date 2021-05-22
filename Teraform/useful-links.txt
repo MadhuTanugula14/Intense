@@ -1,0 +1,41 @@
+VPC Creation:
+============
+
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc
+
+
+Subnet-Creation:
+================
+
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet
+
+IGW:
+===
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/internet_gateway
+
+Security-Groups:
+================
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group
+
+Route_Table:
+===========
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table
+
+Route_Table_Association:
+========================
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table_association
+
+Elastic Ip address configuration:
+================================
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eip
+
+
+Elastic ip charges:
+==================
+https://aws.amazon.com/premiumsupport/knowledge-center/elastic-ip-charges/
+
+
+Git Cheat sheet:
+===============
+https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet
+

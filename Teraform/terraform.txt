@@ -1,0 +1,51 @@
+-->Once write the terraform filr:
+   
+   terraform refresh
+   terraform init   ( provide the initized plugins and download it)
+   terraform plan
+   terraform apply
+
+give the access key and secret key to aws: ( not mentioned in script)
+==========================================
+use below command:
+===============
+--> aws configure
+
+then, terraform init
+      terraform paln  
+      terraform apply
+
+
+
+
+If you don't want to ask the yes option for conformation when you use " terraform apply":
+=========================================================================================
+
+Use-->  terraform apply --auto-approve
+
+
+
+To find the available versions of java:
+======================================
+sudo yum list | grep java-1.8.0
+
+
+For jenkins:
+===========
+sudo systemctl start jenkins
+sudo systemctl enable jenkins
+sudo chkconfig jenkins on
+
+
+Userdata location:
+=================
+/var/lib/cloud/instances/i-0990r9q9809(instanceid)/
+
+userdata log location:
+=====================
+/var/log/
+
+cloud-init-output.log   <--(log file name)
+
+
+
