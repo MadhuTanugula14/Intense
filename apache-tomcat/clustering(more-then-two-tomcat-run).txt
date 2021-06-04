@@ -1,0 +1,132 @@
+means more then one tomcat instances run in one machine or one instance:
+=======================================================================
+
+setp-1:
+=======
+create folder for tomcat instances seperatly.
+ like:
+
+instance-1
+instance-2
+instance-3
+
+then copy the all files and folder from main apache tomcat to these instances except  bin and lib folder.
+
+step-2:
+======
+ edit the /conf/server.xml file in all theree instances.
+
+change the three places.
+
+  i) shutdown port  ( heare 8105 )
+
+
+           define subcomponents such as "Valves" at this level.
+     Documentation at /docs/config/server.html
+ -->
+<Server port="8105" shutdown="SHUTDOWN">
+  <Listener className="org.apache.catalina.startup.VersionLoggerListener" />
+  <!-- Security listener. Documentation at /docs/config/listeners.html
+  <Listener className="org.apache.catalina.security.SecurityListener" />
+  -->
+
+
+
+
+  ii)connect port  (here 8080)
+
+                     <!--    <Connector port="8080" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" />
+
+
+
+
+
+  iii) Ajp port  (here 8109 )
+
+
+         <!-- Define an AJP 1.3 Connector on port 8009 -->
+    <Connector port="8109" protocol="AJP/1.3" redirectPort="8443" />
+
+
+
+setp-3:
+======
+                                            
+                                       ON Linux
+
+                              
+create the script. in that folder write the scrips files for start and stop instances.
+
+like: 
+
+for startup-instance1.sh
+
+#!bin/bash
+export CATALINA_HOME=/home/itl-madhu/Learning/apache-tomcat/tomcat-9
+export CATALINA_BASE=/home/itl-madhu/Learning/apache-tomcat/instance-1
+
+cd $CATALINA_HOME/bin
+./startup.sh
+
+
+copy the above scrip to startup the instance-1
+Here:
+      export CATALINA_HOME=/home/itl-madhu/Learning/apache-tomcat/tomcat-9   ----> this is where your main tomcat avilabe path.
+      export CATALINA_BASE=/home/itl-madhu/Learning/apache-tomcat/instance-1  ----> this is which instance you want to run. that instance path
+
+For shutdown-instance1.sh:    
+==================
+
+#!bin/bash
+export CATALINA_HOME=/home/itl-madhu/Learning/apache-tomcat/tomcat-9
+export CATALINA_BASE=/home/itl-madhu/Learning/apache-tomcat/instance-1
+
+cd $CATALINA_HOME/bin
+./shutdown.sh
+
+
+                                            ON Windows
+
+
+
+create the script. in that folder write the scrips files for start and stop instances.
+
+like: 
+
+for startup-instance1.bat
+
+
+set CATALINA_HOME=D:/home/itl-madhu/Learning/apache-tomcat/tomcat-9
+set CATALINA_BASE=D:/home/itl-madhu/Learning/apache-tomcat/instance-1
+
+cd %CATALINA_HOME%/bin
+startup.bat
+
+
+copy the above scrip to startup the instance-1
+Here:
+      set CATALINA_HOME=D:/home/itl-madhu/Learning/apache-tomcat/tomcat-9   ----> this is where your main tomcat avilabe path.
+      set CATALINA_BASE=D:/home/itl-madhu/Learning/apache-tomcat/instance-1  ----> this is which instance you want to run. that instance path
+
+For shutdown-instance1.bat:    
+==================
+
+
+set CATALINA_HOME=D:/home/itl-madhu/Learning/apache-tomcat/tomcat-9
+set CATALINA_BASE=D:/home/itl-madhu/Learning/apache-tomcat/instance-1
+
+cd %CATALINA_HOME%/bin
+shutdown.bat
+
+
+
+
+
+
+
+
+
+
+

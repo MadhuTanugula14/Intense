@@ -1,0 +1,23 @@
+means more then one tomcat instances run in one machine or one instance:
+=======================================================================
+
+setp-1:
+=======
+create folder for tomcat instances seperatly.
+ like:
+
+instance-1
+instance-2
+instance-3
+
+then copy the all files and folder from main apache tomcat to these instances except  bin and lib folder.
+
+step-2:
+======
+ edit the /conf/server.xml file in all theree instances.
+
+change the three places.
+
+  i) shutdown port
+  ii)connect port
+  iii) Ajp port

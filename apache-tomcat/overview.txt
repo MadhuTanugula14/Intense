@@ -1,0 +1,23 @@
+
+tomcat components:
+===================
+--->Catalina
+--->Jasper
+--->Coyote
+--->Cluster
+
+
+  ==>Catalina:
+     =========
+     it is core component it handle the lifecycle of a servlet.
+     Servlet involves loading,initilizing,serving and destroying the servlet as per java specification of jsp and servlet.
+    
+ ==>Jasper
+    =======
+    it reads through the jsp file and generates the servlet on the fly, which there after taken care about catalina for life cycle excution.
+    So, if at runtime any jsp file is midified then this component is also responsible for detecting the change and then compile them into servlet before serving 
+    the response.
+
+ ==>Cluster:
+    ========
+   it is used for load balancing.

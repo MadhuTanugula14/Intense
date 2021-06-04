@@ -1,0 +1,57 @@
+
+here 3 website hosting.
+website-1 
+website-2
+website-3
+
+
+setp -1:
+========
+
+create the seperate folders  for all websites. files means index.jsp etc ...
+
+forlders like:
+
+website1-webapps/Root
+website2-webapps/Root
+website3-webapps/Root
+
+Note: keep the all files related to website in side the Root folder
+
+
+step -2:
+=======
+
+give the Host entrys in server.xml file.
+
+For example:
+===========
+
+<Host name="www.thanugula-1.com"  appBase="website1-webapps"
+      unpackWARs="true" autoDeploy="true">
+
+<Host name="www.thanugula-2.com"  appBase="website2-webapps"
+      unpackWARs="true" autoDeploy="true">
+
+<Host name="www.thanugula-3.com"  appBase="website-webapps"
+      unpackWARs="true" autoDeploy="true">
+
+
+
+step-3:
+========
+
+give the this web site in hosts files.
+
+under.
+
+Go to Run --> type drives -->
+
+ --> /etc/hosts 
+
+given entrys in this hosts file.
+
+127.10.0.0 www.thanugula-1.com
+127.10.0.0 www.thanugula-2.com
+127.10.0.0 www.thanugula-3.com
+Note: here ip is tomcat ip address.

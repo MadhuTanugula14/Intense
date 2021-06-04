@@ -1,0 +1,42 @@
+04-Jun-2021 18:07:44.039 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.29
+04-Jun-2021 18:07:44.048 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Nov 16 2019 17:29:07 UTC
+04-Jun-2021 18:07:44.049 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.29.0
+04-Jun-2021 18:07:44.049 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+04-Jun-2021 18:07:44.049 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.15.0-54-generic
+04-Jun-2021 18:07:44.049 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+04-Jun-2021 18:07:44.050 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-11-openjdk-amd64
+04-Jun-2021 18:07:44.050 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.8+10-post-Ubuntu-0ubuntu118.04.1
+04-Jun-2021 18:07:44.050 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+04-Jun-2021 18:07:44.050 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/itl-madhu/Learning/apache-tomcat/instance-2
+04-Jun-2021 18:07:44.050 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/itl-madhu/Learning/apache-tomcat/tomcat-9
+04-Jun-2021 18:07:44.068 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+04-Jun-2021 18:07:44.068 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+04-Jun-2021 18:07:44.068 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+04-Jun-2021 18:07:44.068 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/itl-madhu/Learning/apache-tomcat/instance-2/conf/logging.properties
+04-Jun-2021 18:07:44.068 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+04-Jun-2021 18:07:44.068 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+04-Jun-2021 18:07:44.068 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+04-Jun-2021 18:07:44.068 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+04-Jun-2021 18:07:44.069 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+04-Jun-2021 18:07:44.069 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/itl-madhu/Learning/apache-tomcat/instance-2
+04-Jun-2021 18:07:44.069 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/itl-madhu/Learning/apache-tomcat/tomcat-9
+04-Jun-2021 18:07:44.069 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/itl-madhu/Learning/apache-tomcat/instance-2/temp
+04-Jun-2021 18:07:44.069 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/u01/app/oracle/product/12.2.0/dbhome_1/lib:/lib:/usr/lib:/usr/lib64:/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+04-Jun-2021 18:07:44.407 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["https-jsse-nio-8280"]
+04-Jun-2021 18:07:44.999 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8209"]
+04-Jun-2021 18:07:45.002 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1,221] milliseconds
+04-Jun-2021 18:07:45.069 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+04-Jun-2021 18:07:45.069 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.29]
+04-Jun-2021 18:07:45.079 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/itl-madhu/Learning/apache-tomcat/instance-2/webapps/examples]
+04-Jun-2021 18:07:45.651 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/itl-madhu/Learning/apache-tomcat/instance-2/webapps/examples] has finished in [572] ms
+04-Jun-2021 18:07:45.651 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/itl-madhu/Learning/apache-tomcat/instance-2/webapps/host-manager]
+04-Jun-2021 18:07:45.696 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/itl-madhu/Learning/apache-tomcat/instance-2/webapps/host-manager] has finished in [44] ms
+04-Jun-2021 18:07:45.696 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/itl-madhu/Learning/apache-tomcat/instance-2/webapps/ROOT]
+04-Jun-2021 18:07:45.722 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/itl-madhu/Learning/apache-tomcat/instance-2/webapps/ROOT] has finished in [26] ms
+04-Jun-2021 18:07:45.722 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/itl-madhu/Learning/apache-tomcat/instance-2/webapps/docs]
+04-Jun-2021 18:07:45.748 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/itl-madhu/Learning/apache-tomcat/instance-2/webapps/docs] has finished in [26] ms
+04-Jun-2021 18:07:45.748 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/itl-madhu/Learning/apache-tomcat/instance-2/webapps/manager]
+04-Jun-2021 18:07:45.780 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/itl-madhu/Learning/apache-tomcat/instance-2/webapps/manager] has finished in [32] ms
+04-Jun-2021 18:07:45.786 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["https-jsse-nio-8280"]
+04-Jun-2021 18:07:45.796 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8209"]
+04-Jun-2021 18:07:45.815 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [812] milliseconds
