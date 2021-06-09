@@ -1,0 +1,100 @@
+Step:-1
+=======
+
+Create 3 instance in aws:
+====================
+ one for nginx
+ secound for tomcat server
+ third for    "  "    " "
+
+ 
+setp:-2:
+======
+--> enable the selinux all three instances.
+
+setp:3-
+======
+edit the " /etc/ssh/sshd_config "  file  edit as " passwordauthentication yes "   in this file.
+
+then run,
+
+--> sudo service restart sshd
+
+next-->
+
+as root user.
+
+create the adduser in three instances.
+
+  1) nginx
+  2)tomcat-1
+  3)tomcat-2
+then add this users in  /etc/sudousers  file.
+
+
+step-4:
+=======
+etstablish connectioin less autentication via sshkeygen.
+=======================================================
+ in nginx server.
+ generate the key.
+for that 
+run   sshkeygen
+
+then this key copy to tomcat instances.
+
+run  ssh-copy-id username@hostip
+
+
+step-5:
+======
+
+downloads: prerequsites:
+=======================
+
+nginx server install nginx.
+
+tomcat server  install jdk and apache tomcat.
+
+step-6:
+=======
+ in nginx server 
+open  /etc/nginx/nginx.conf
+
+give the tomcat server ip's in this file. as below mentioned.
+
+ two places: one is  --> at http place
+              secound on is  server block { } place location /
+
+
+--------------------------------------------------------
+firt change:
+============
+
+http {
+   upstream tomcatservers {
+
+   server 44.233.110.99:8080;    note:-(this is tomcat ip address)
+   server 52.10.10.104:8080;
+}
+
+
+
+secound change:
+=============
+
+ 
+server {
+        listen       80 default_server;
+        listen       [::]:80 default_server;
+        server_name  _;
+        root         /usr/share/nginx/html;
+
+        # Load configuration files for the default server block.
+        include /etc/nginx/default.d/*.conf;
+
+        location / {
+           proxy_pass http://tomcatservers;    ----> here enty the tomcat server ip from http place given name. upstream  tomcatservers
+        }
+
+
